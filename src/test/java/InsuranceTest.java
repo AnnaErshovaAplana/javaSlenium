@@ -102,10 +102,8 @@ public class InsuranceTest {
         driver.findElement(locator).sendKeys(value);
     }
 
-
-    @Test
     //    Сценарий №1
-
+    @Test
     public void testTravelInsuranceCertificate(){
         //  1. Перейти на страницу http://www.sberbank.ru/ru/person
         driver.get(TravelInsuranceUrl);
