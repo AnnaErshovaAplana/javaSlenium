@@ -1,4 +1,5 @@
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.Wait;
@@ -15,6 +16,7 @@ public class SberRefactoredTest extends BaseTest {
 
     //    Сценарий №1
     @Test
+    @Ignore
     public void testRefactoredTravelInsuranceCertificate() {
         //  1. Перейти на страницу http://www.sberbank.ru/ru/person
         driver.get(TravelInsuranceUrl);

@@ -1,21 +1,30 @@
+package steps;
+import java.util.Properties;
 import org.junit.AfterClass;
+import org.junit.Before;
 import org.junit.BeforeClass;
-import org.openqa.selenium.By;
-import org.openqa.selenium.Keys;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import ru.yandex.qatools.allure.annotations.Attachment;
 import util.TestProperties;
 
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
-public class BaseTest {
+public class SberBaseSteps {
+
+    public static WebDriver getDriver(){
+        return driver;
+    }
     protected static WebDriver driver;
     protected static String baseUrl;
     protected static String TravelInsuranceUrl;
     // переменная для считывания properties
-     public static Properties properties = TestProperties.getInstance().getProperties();
+    public static Properties properties = TestProperties.getInstance().getProperties();
+
 
     @BeforeClass
     public static void SetUp() throws Exception {
@@ -51,11 +60,4 @@ public class BaseTest {
         driver.quit();
     }
 
-    //метод для заполнения полей
-    public void fillFields(By locator, String value) {
-        driver.findElement(locator).clear();
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-        driver.findElement(locator).sendKeys(value, Keys.ENTER);
-        driver.manage().timeouts().implicitlyWait(1, TimeUnit.SECONDS);
-    }
 }

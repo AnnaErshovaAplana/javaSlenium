@@ -14,6 +14,7 @@ public class SberTest extends BaseTest {
 
     //    Сценарий №1
     @Test
+    @Ignore
     public void testTravelInsuranceCertificate() {
         //  1. Перейти на страницу http://www.sberbank.ru/ru/person
         driver.get(TravelInsuranceUrl);

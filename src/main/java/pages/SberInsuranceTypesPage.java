@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -20,6 +18,9 @@ public class SberInsuranceTypesPage extends SberBasePage {
 
     @FindBy(xpath = "//h3[contains(text(),'Страхование для путешественников')]")
     WebElement TravellersInsuranceBlock;
+
+    @FindBy(xpath = "//h3[contains(text(),\"Страхование для путешественников\")]/parent::*/parent::*/parent::*//a/b[contains(text(),'Оформить онлайн')]")
+    WebElement insuranceOnlineButton;
 
     public SberInsuranceTypesPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
@@ -52,5 +53,15 @@ public class SberInsuranceTypesPage extends SberBasePage {
                 "arguments[0].scrollIntoView(true);", getOnlineButton
         );
         getOnlineButton.click();
+    }
+
+    /**
+     * Нажимаем на кнопку "Оформить онлайн" для выбранного типа страхования
+     */
+    public void clickGetOnlineButtonForTravelInsuranceType() {
+        ((JavascriptExecutor) driver).executeScript(
+                "arguments[0].scrollIntoView(true);", insuranceOnlineButton
+        );
+        insuranceOnlineButton.click();
     }
 }

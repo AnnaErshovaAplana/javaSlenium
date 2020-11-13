@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import steps.SberBaseSteps;
 
 
 public class SberTravelInsuranceParametersPage extends SberBasePage {
@@ -28,7 +29,7 @@ public class SberTravelInsuranceParametersPage extends SberBasePage {
         PageFactory.initElements(driver, this);
         (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.visibilityOf(title));
-        this.driver = driver;
+        this.driver= driver;
     }
 
     /**
@@ -37,13 +38,13 @@ public class SberTravelInsuranceParametersPage extends SberBasePage {
      * @param packageType
      */
     public void choosePackageType(String packageType) {
-        Wait<WebDriver> wait = new WebDriverWait(driver, 10, 1000);
+        Wait<WebDriver> wait = new WebDriverWait(driver, 20, 1000);
         switch (packageType) {
             case "Спортивный":
                 ((JavascriptExecutor) driver).executeScript(
                         "arguments[0].scrollIntoView(true);", sportPackage
                 );
-                wait.until(ExpectedConditions.visibilityOf(AttorneyPackage)).click();
+                wait.until(ExpectedConditions.visibilityOf(sportPackage)).click();
                 break;
             case "Личный адвокат":
                 ((JavascriptExecutor) driver).executeScript(

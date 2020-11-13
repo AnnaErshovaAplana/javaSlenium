@@ -26,4 +26,5 @@ public class SberBasePage {
     public void checkFillField(String value, WebElement element) {
         assertEquals(value, element.getAttribute("value"));
     }
+
 }

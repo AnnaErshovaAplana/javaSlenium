@@ -1,3 +1,4 @@
+import org.junit.Ignore;
 import pages.RGSDMSPage;
 import pages.RGSMainPage;
 import org.junit.Assert;
@@ -13,6 +14,7 @@ import pages.RGSSendAppPage;
 public class InsuranceRefactoredTest extends BaseTest {
 
     @Test
+    @Ignore
     public void newInsuranceTest() {
         // переходим по ссылке
         driver.get(baseUrl);
