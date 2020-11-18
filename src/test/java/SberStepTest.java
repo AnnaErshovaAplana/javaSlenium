@@ -1,4 +1,5 @@
 import org.junit.Assert;
+import org.junit.Ignore;
 import org.junit.Test;
 import ru.yandex.qatools.allure.annotations.Title;
 import steps.*;
@@ -15,7 +16,7 @@ public class SberStepTest extends SberBaseSteps {
     HashMap<String, String> testData2 = new HashMap<>();
     HashMap<String, String> testData3 = new HashMap<>();
 
-
+    @Ignore
     @Title("Заведомо падающий тест")
     @Test
     public void TestFail() {

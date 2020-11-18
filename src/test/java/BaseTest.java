@@ -40,10 +40,10 @@ public class BaseTest {
         // записываем значения в переменные ссылок
         baseUrl = properties.getProperty("baseUrl");
         TravelInsuranceUrl = properties.getProperty("TravelInsuranceUrl");
-        System.out.println("Ссылка на вебстраницу для тестов РГС " + baseUrl);
         System.out.println("Ссылка на вебстраницу для тестов СберСтрах " + TravelInsuranceUrl);
         driver.manage().timeouts().implicitlyWait(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.get(TravelInsuranceUrl);
     }
 
     @AfterClass

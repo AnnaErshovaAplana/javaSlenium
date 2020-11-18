@@ -1,7 +1,9 @@
 package steps;
 import java.util.Properties;
+
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.junit.AfterClass;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
@@ -26,7 +28,8 @@ public class SberBaseSteps {
     public static Properties properties = TestProperties.getInstance().getProperties();
 
 
-    @BeforeClass
+    //@BeforeClass заменяем аннотацию Junit на аннотацию CUCUMBER, потому что с аннотацией Junit CUCUMBER не может работать
+    @Before
     public static void SetUp() throws Exception {
         // из файла properties считываем переменную browser для уточнения, какой использовать браузер
         switch (properties.getProperty("browser")) {
@@ -55,7 +58,8 @@ public class SberBaseSteps {
         driver.manage().window().maximize();
     }
 
-    @AfterClass
+    //@AfterClass заменяем аннотацию Junit на аннотацию CUCUMBER, потому что с аннотацией Junit CUCUMBER не может работать
+    @After
     public static void tearDown() throws Exception {
         driver.quit();
     }

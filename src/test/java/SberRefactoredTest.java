@@ -22,7 +22,7 @@ public class SberRefactoredTest extends BaseTest {
         driver.get(TravelInsuranceUrl);
 
         // 2. Нажать на – Страхование
-        SberMainPage mainPage = new SberMainPage(driver);
+        SberMainPage mainPage = new SberMainPage();
         mainPage.selectInBottomMenu("Страхование");
 
         //смотрим, что выполнился переход по клику и ссылка изменилась
@@ -30,7 +30,7 @@ public class SberRefactoredTest extends BaseTest {
 
         //3. Находим блок с названием "Страхование для путешественников"
         // 4. Проверить наличие на странице заголовка – Страхование для путешественников
-        SberInsuranceTypesPage insuranceTypesPage = new SberInsuranceTypesPage(driver);
+        SberInsuranceTypesPage insuranceTypesPage = new SberInsuranceTypesPage();
         String TravellersInsuranceBlockHeader = insuranceTypesPage.getInsuranceTypeVisibleName("Страхование для путешественников");
         Assert.assertEquals("Страхование для путешественников", TravellersInsuranceBlockHeader);
 
@@ -38,7 +38,7 @@ public class SberRefactoredTest extends BaseTest {
         insuranceTypesPage.clickGetOnlineButtonForInsuranceType("Страхование для путешественников");
 
         //6. На вкладке – Выбор полиса выбрать Спортивный пакет
-        SberTravelInsuranceParametersPage travelInsuranceTypeParametersPage = new SberTravelInsuranceParametersPage(driver);
+        SberTravelInsuranceParametersPage travelInsuranceTypeParametersPage = new SberTravelInsuranceParametersPage();
         travelInsuranceTypeParametersPage.choosePackageType("Спортивный");
 
         //7. Нажать Оформить
@@ -50,7 +50,7 @@ public class SberRefactoredTest extends BaseTest {
 
         //8. На вкладке Оформить заполнить поля:
         //• Фамилию и Имя, Дату рождения застрахованных
-        SberTravelInsuranceFormPage travelInsuranceFormPage = new SberTravelInsuranceFormPage(driver);
+        SberTravelInsuranceFormPage travelInsuranceFormPage = new SberTravelInsuranceFormPage();
         travelInsuranceFormPage.fillInsuredFields("Фамилия", "Иванов");
         travelInsuranceFormPage.fillInsuredFields("Имя", "Иван");
         travelInsuranceFormPage.fillInsuredFields("Дата рождения", "01011990");

@@ -7,6 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import steps.SberBaseSteps;
 
 
 import java.util.List;
@@ -22,10 +23,9 @@ public class SberInsuranceTypesPage extends SberBasePage {
     @FindBy(xpath = "//h3[contains(text(),\"Страхование для путешественников\")]/parent::*/parent::*/parent::*//a/b[contains(text(),'Оформить онлайн')]")
     WebElement insuranceOnlineButton;
 
-    public SberInsuranceTypesPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
-        this.driver = driver;
+    public SberInsuranceTypesPage() {
+        PageFactory.initElements(SberBaseSteps.getDriver(), this);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 
     /**

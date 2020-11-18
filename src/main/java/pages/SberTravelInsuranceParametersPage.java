@@ -25,11 +25,10 @@ public class SberTravelInsuranceParametersPage extends SberBasePage {
     @FindBy(xpath = "//button[(text()='Оформить')]")
     WebElement formButton;
 
-    public SberTravelInsuranceParametersPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public SberTravelInsuranceParametersPage() {
+        PageFactory.initElements(SberBaseSteps.getDriver(), this);
         (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.visibilityOf(title));
-        this.driver= driver;
     }
 
     /**

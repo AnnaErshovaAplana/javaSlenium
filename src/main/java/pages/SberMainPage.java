@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import steps.SberBaseSteps;
 
 
 import java.util.concurrent.TimeUnit;
@@ -23,10 +24,9 @@ public class SberMainPage extends SberBasePage {
     @FindBy(xpath = "//div[contains(@class,'kitt-cookie-warning')][contains(@style,'display')]")
     WebElement cookieWarningBlock;
 
-    public SberMainPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+    public SberMainPage() {
+        PageFactory.initElements(SberBaseSteps.getDriver(), this);
+        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 
     public void selectInBottomMenu(String menuItem) {

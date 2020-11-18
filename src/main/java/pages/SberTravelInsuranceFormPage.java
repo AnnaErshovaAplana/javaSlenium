@@ -63,10 +63,9 @@ public class SberTravelInsuranceFormPage extends SberBasePage {
     @FindAll(@FindBy(css = "span.form-control__message"))
     List<WebElement> errorFields;
 
-    public SberTravelInsuranceFormPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
+    public SberTravelInsuranceFormPage() {
+        PageFactory.initElements(SberBaseSteps.getDriver(), this);
         (new WebDriverWait(driver, 20)).until(ExpectedConditions.visibilityOf(formingStepActive));
-        this.driver = driver;
     }
 
 
