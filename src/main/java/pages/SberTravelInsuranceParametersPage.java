@@ -27,6 +27,7 @@ public class SberTravelInsuranceParametersPage extends SberBasePage {
 
     public SberTravelInsuranceParametersPage() {
         PageFactory.initElements(SberBaseSteps.getDriver(), this);
+        this.driver=SberBaseSteps.getDriver();
         (new WebDriverWait(driver, 20))
                 .until(ExpectedConditions.visibilityOf(title));
     }

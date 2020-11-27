@@ -6,7 +6,6 @@ import org.openqa.selenium.support.FindAll;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import steps.SberBaseSteps;
 
@@ -65,6 +64,7 @@ public class SberTravelInsuranceFormPage extends SberBasePage {
 
     public SberTravelInsuranceFormPage() {
         PageFactory.initElements(SberBaseSteps.getDriver(), this);
+        this.driver=SberBaseSteps.getDriver();
         (new WebDriverWait(driver, 20)).until(ExpectedConditions.visibilityOf(formingStepActive));
     }
 

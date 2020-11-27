@@ -21,7 +21,7 @@ public class SberCucumberSteps {
         sberInsuranceTypesPageSteps.checkPageTitle(name);
     }
 
-    @When("^Нажать на – Оформить Онлайн")
+    @When("^Нажать на – 'Оформить Онлайн'")
     public void clickGetOnline() {
         sberInsuranceTypesPageSteps.clickGetOnlineButtonForInsuranceType();
     }
@@ -31,7 +31,7 @@ public class SberCucumberSteps {
         sberTravelInsuranceParametersPageSteps.choosePackageType(name);
     }
 
-    @When("^Нажать на – Оформить")
+    @When("^Нажать на – 'Оформить'")
     public void form() {
         sberTravelInsuranceParametersPageSteps.clickFormButton();
     }
@@ -77,7 +77,7 @@ public class SberCucumberSteps {
         sberTravelInsuranceFormPageSteps.clickSubmitButton();
     }
 
-    @When("^появилось сообщение - Заполнены не все обязательные поля")
+    @When("^Появилось сообщение - Заполнены не все обязательные поля\"(.*)\"$")
     public void checkIfAlertsPresent(int count) {
         sberTravelInsuranceFormPageSteps.checkIfAlertsPresent(count);
     }

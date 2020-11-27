@@ -26,6 +26,7 @@ public class SberMainPage extends SberBasePage {
 
     public SberMainPage() {
         PageFactory.initElements(SberBaseSteps.getDriver(), this);
+        this.driver=SberBaseSteps.getDriver();
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 

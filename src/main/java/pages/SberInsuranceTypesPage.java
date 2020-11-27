@@ -25,7 +25,8 @@ public class SberInsuranceTypesPage extends SberBasePage {
 
     public SberInsuranceTypesPage() {
         PageFactory.initElements(SberBaseSteps.getDriver(), this);
-        driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
+        this.driver = SberBaseSteps.getDriver();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
     }
 
     /**

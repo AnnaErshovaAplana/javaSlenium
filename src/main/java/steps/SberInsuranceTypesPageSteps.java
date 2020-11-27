@@ -21,6 +21,6 @@ public class SberInsuranceTypesPageSteps {
     @Step("заголовок страницы - Отправить заявку равен {0}")
     public void checkPageTitle(String expectedTitle){
         String TravellersInsuranceBlockHeader = new SberInsuranceTypesPage().getInsuranceTypeVisibleName("Страхование для путешественников");
-        Assert.assertEquals("Заголовок равен [%s]. Ожидалось - [%s]", expectedTitle, TravellersInsuranceBlockHeader);
+        Assert.assertEquals("Заголовок равен "+TravellersInsuranceBlockHeader+". Ожидалось - "+expectedTitle, expectedTitle, TravellersInsuranceBlockHeader);
     }
 }
