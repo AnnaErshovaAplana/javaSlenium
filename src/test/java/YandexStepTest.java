@@ -1,9 +1,6 @@
-import org.junit.FixMethodOrder;
 import org.junit.Ignore;
 import org.junit.Test;
-import org.junit.runners.MethodSorters;
 import pages.YandexBasePage;
-import ru.yandex.qatools.allure.annotations.Parameter;
 import ru.yandex.qatools.allure.annotations.Title;
 import steps.*;
 
@@ -34,7 +31,7 @@ public class YandexStepTest extends YandexBaseSteps {
         yandexBasePage.switchToWindow(1);
 //        3. Выбрать раздел Электроника
         yandexMarketPageSteps.selectSection("Электроника");
-//        4. Выбрать раздел Наушники
+//        4. Выбрать раздел Телевизоры
         yandexElectronicsPageSteps.selectProductCategory("Телевизоры");
 //        5. Зайти в расширенный поиск
 //        6. Задать параметр поиска от 500000 рублей.
@@ -64,7 +61,7 @@ public class YandexStepTest extends YandexBaseSteps {
         yandexBasePage.switchToWindow(1);
 //        3. Выбрать раздел Электроника
         yandexMarketPageSteps.selectSection("Электроника");
-//        4. Выбрать раздел Телевизоры
+//        4. Выбрать раздел Наушники
         yandexElectronicsPageSteps.selectProductCategory("Наушники");
 //        5. Зайти в расширенный поиск
 //        6. Задать параметр поиска от 10000 рублей.

@@ -2,7 +2,6 @@ package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
@@ -26,7 +25,7 @@ public class SberMainPage extends SberBasePage {
 
     public SberMainPage() {
         PageFactory.initElements(SberBaseSteps.getDriver(), this);
-        this.driver=SberBaseSteps.getDriver();
+        this.driver = SberBaseSteps.getDriver();
         driver.manage().timeouts().pageLoadTimeout(20, TimeUnit.SECONDS);
     }
 
@@ -37,8 +36,9 @@ public class SberMainPage extends SberBasePage {
         );
         bottomMenuItem.click();
     }
+
     public void selectInsuranceBottomMenu() {
-        if(cookieWarningBlock.getAttribute("style").equals("display: block;")){
+        if (cookieWarningBlock.getAttribute("style").equals("display: block;")) {
             cookieWarningButton.click();
         }
         ((JavascriptExecutor) this.driver).executeScript(

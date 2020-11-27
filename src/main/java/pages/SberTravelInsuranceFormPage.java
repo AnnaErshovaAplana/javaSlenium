@@ -64,10 +64,9 @@ public class SberTravelInsuranceFormPage extends SberBasePage {
 
     public SberTravelInsuranceFormPage() {
         PageFactory.initElements(SberBaseSteps.getDriver(), this);
-        this.driver=SberBaseSteps.getDriver();
+        this.driver = SberBaseSteps.getDriver();
         (new WebDriverWait(driver, 20)).until(ExpectedConditions.visibilityOf(formingStepActive));
     }
-
 
 
     public WebElement getElementByName(String elementName) {
@@ -101,16 +100,17 @@ public class SberTravelInsuranceFormPage extends SberBasePage {
 
     /**
      * получить данные из заполненного поля застрахованных
+     *
      * @param fieldName
      * @return
      */
-    public String getFillInsuredField(String fieldName){
-        switch (fieldName){
-            case  "Фамилия":
+    public String getFillInsuredField(String fieldName) {
+        switch (fieldName) {
+            case "Фамилия":
                 return surname.getAttribute("value");
-            case  "Имя":
+            case "Имя":
                 return name.getAttribute("value");
-            case  "Дата рождения":
+            case "Дата рождения":
                 return birth.getAttribute("value");
         }
         throw new AssertionError("Поле не объявлено на странице");
@@ -118,18 +118,19 @@ public class SberTravelInsuranceFormPage extends SberBasePage {
 
     /**
      * получить данные из заполненного поля страхователя
+     *
      * @param fieldName
      * @return
      */
-    public String getFillInsurerField(String fieldName){
-        switch (fieldName){
-            case  "Фамилия":
+    public String getFillInsurerField(String fieldName) {
+        switch (fieldName) {
+            case "Фамилия":
                 return insurerSurname.getAttribute("value");
-            case  "Имя":
+            case "Имя":
                 return insurerName.getAttribute("value");
-            case  "Отчество":
+            case "Отчество":
                 return insurerSecondName.getAttribute("value");
-            case  "Дата рождения":
+            case "Дата рождения":
                 return insurerBirth.getAttribute("value");
         }
         throw new AssertionError("Поле не объявлено на странице");
@@ -137,18 +138,19 @@ public class SberTravelInsuranceFormPage extends SberBasePage {
 
     /**
      * получить данные из заполненного поля паспортных данных страхователя
+     *
      * @param fieldName
      * @return
      */
-    public String getFillInsurerPassField(String fieldName){
-        switch (fieldName){
-            case  "Серия":
+    public String getFillInsurerPassField(String fieldName) {
+        switch (fieldName) {
+            case "Серия":
                 return insurerPassSeries.getAttribute("value");
-            case  "Номер":
+            case "Номер":
                 return insurerPassNo.getAttribute("value");
-            case  "Дата выдачи":
+            case "Дата выдачи":
                 return insurerPassIssueDate.getAttribute("value");
-            case  "Кем выдан":
+            case "Кем выдан":
                 return insurerPassWhoIssue.getAttribute("value");
         }
         throw new AssertionError("Поле не объявлено на странице");

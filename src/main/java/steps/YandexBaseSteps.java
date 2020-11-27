@@ -1,9 +1,7 @@
 package steps;
 
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import cucumber.api.java.After;
+import cucumber.api.java.Before;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -24,7 +22,8 @@ public class YandexBaseSteps {
     // переменная для считывания properties
     public static Properties properties = TestProperties.getInstance().getProperties();
 
-    @BeforeClass
+    //@BeforeClass заменяем аннотацию Junit на аннотацию CUCUMBER, потому что с аннотацией Junit CUCUMBER не может работать
+    @Before
     public static void SetUp() throws Exception {
         // из файла properties считываем переменную browser для уточнения, какой использовать браузер
         switch (properties.getProperty("browser")) {
@@ -47,9 +46,11 @@ public class YandexBaseSteps {
         startPage = properties.getProperty("startPage");
         driver.manage().timeouts().pageLoadTimeout(60, TimeUnit.SECONDS);
         driver.manage().window().maximize();
+        driver.get(startPage);
     }
 
-    @AfterClass
+    //@AfterClass заменяем аннотацию Junit на аннотацию CUCUMBER, потому что с аннотацией Junit CUCUMBER не может работать
+    @After
     public static void tearDown() throws Exception {
         driver.quit();
     }

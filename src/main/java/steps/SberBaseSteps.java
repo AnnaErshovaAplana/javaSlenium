@@ -3,17 +3,11 @@ import java.util.Properties;
 
 import cucumber.api.java.After;
 import cucumber.api.java.Before;
-import org.junit.AfterClass;
-import org.junit.BeforeClass;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
-import ru.yandex.qatools.allure.annotations.Attachment;
 import util.TestProperties;
 
-import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class SberBaseSteps {
@@ -22,7 +16,6 @@ public class SberBaseSteps {
         return driver;
     }
     protected static WebDriver driver;
-    protected static String baseUrl;
     protected static String TravelInsuranceUrl;
     // переменная для считывания properties
     public static Properties properties = TestProperties.getInstance().getProperties();

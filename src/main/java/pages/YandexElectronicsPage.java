@@ -29,7 +29,7 @@ public class YandexElectronicsPage extends YandexBasePage {
 
     public void chooseElectronicsCategory(String categoryName) {
         YandexBaseSteps.getDriver().manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        switch (categoryName){
+        switch (categoryName) {
             case "Телевизоры":
                 ((JavascriptExecutor) driver).executeScript(
                         "arguments[0].scrollIntoView(true);", tvCategory
